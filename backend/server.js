@@ -22,7 +22,7 @@ app.get('/available-countries', async (req, res) => {
 
 app.get('/country-info/:countryCode', async (req, res) => {
   try {
-    //will use the common name to find the population data because the nager api does not provide iso3 code
+    // will use the common name to find the population data because the nager api does not provide iso3 code
     const borderResponse = await axios.get(
       `${NAGER_API_BASE_URL}/CountryInfo/${req.params.countryCode}`
     )
@@ -43,7 +43,7 @@ app.get('/country-info/:countryCode', async (req, res) => {
       borders,
       countryName: borderResponse.data.commonName,
       population: populationData ? populationData.populationCounts : [],
-      flag: flag ? flag.flag : null,
+      flag: flag ? flag.flag : null
     })
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch country info' })

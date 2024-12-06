@@ -10,9 +10,7 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend,
-  Colors,
-  plugins,
+  Legend
 } from 'chart.js'
 
 // Register the components
@@ -59,9 +57,9 @@ const CountryInfo = () => {
         label: 'Population Over Time',
         data: population.map(entry => entry.value),
         borderColor: 'white',
-        backgroundColor: 'white',
-      },
-    ],
+        backgroundColor: 'white'
+      }
+    ]
   }
   const options = {
     scales: {
@@ -71,16 +69,16 @@ const CountryInfo = () => {
           text: 'Year',
           color: 'white',
           font: {
-            size: 20,
-          },
+            size: 20
+          }
         },
         grid: {
           color: ['black'],
-          lineWidth: 1,
+          lineWidth: 1
         },
         ticks: {
-          color: 'white',
-        },
+          color: 'white'
+        }
       },
       y: {
         title: {
@@ -88,18 +86,18 @@ const CountryInfo = () => {
           text: 'Population',
           color: 'white',
           font: {
-            size: 20,
-          },
+            size: 20
+          }
         },
         grid: {
           color: ['black'],
-          lineWidth: 1,
+          lineWidth: 1
         },
         ticks: {
-          color: 'white',
-        },
-      },
-    },
+          color: 'white'
+        }
+      }
+    }
   }
   console.log(populationData)
   return (
